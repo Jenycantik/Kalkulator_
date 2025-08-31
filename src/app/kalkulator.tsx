@@ -38,38 +38,39 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className="p-5 text-center">
-      <h1 className="text-xl mb-4">Kalkulator</h1>
+  <div className="p-5 text-center">
+    <h1 className="text-xl mb-4">Kalkulator</h1>
 
-      <div className="border p-3 mb-3 w-40 mx-auto text-lg font-mono">
-        {result !== null
-          ? result
-          : '${digit1 ?? ""} ${operator ?? ""} ${digit2 ?? ""}'}
-      </div>
+    <div className="border p-3 mb-3 w-40 mx-auto text-lg font-mono">
+      {result !== null
+        ? result
+        : `${digit1 ?? ""} ${operator ?? ""} ${digit2 ?? ""}`}
+    </div>
 
-      <div className="grid grid-cols-3 gap-2 w-40 mx-auto mb-3">
-        {[1,2,3,4,5,6,7,8,9].map((n) => (
-          <button
-            key={n}
-            onClick={() => handleNumber(n)}
-            className="border p-2 rounded"
-          >
-            {n}
-          </button>
-        ))}
-      </div>
+    <div className="grid grid-cols-3 gap-2 w-40 mx-auto mb-3">
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+        <button
+          key={n}
+          onClick={() => handleNumber(n)}
+          className="border p-2 rounded"
+        >
+          {n}
+        </button>
+      ))}
+    </div>
 
-      <div className="flex justify-center gap-2 mb-3">
-        <button onClick={() => handleOperator("+")} className="border p-2 rounded">+</button>
-        <button onClick={() => handleOperator("-")} className="border p-2 rounded">-</button>
-      </div>
+    <div className="flex justify-center gap-2 mb-3">
+      <button onClick={() => handleOperator("+")} className="border p-2 rounded">+</button>
+      <button onClick={() => handleOperator("-")} className="border p-2 rounded">-</button>
+    </div>
 
-      <div className="flex justify-center gap-2">
-        <button onClick={handleEqual} className="border p-2 rounded">=</button>
-        <button onClick={handleClear} className="border p-2 rounded">C</button>
-      </div>
-    </div>
-  );
+    <div className="flex justify-center gap-2">
+      <button onClick={handleEqual} className="border p-2 rounded">=</button>
+      <button onClick={handleClear} className="border p-2 rounded">C</button>
+    </div>
+  </div>
+);
+
 }
 
 
